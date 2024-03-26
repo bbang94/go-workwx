@@ -3,8 +3,8 @@ package workwx
 import (
 	"net/http"
 
-	"github.com/xen0n/go-workwx/internal/lowlevel/envelope"
-	"github.com/xen0n/go-workwx/internal/lowlevel/httpapi"
+	"github.com/bbang94/go-workwx/internal/lowlevel/envelope"
+	"github.com/bbang94/go-workwx/internal/lowlevel/httpapi"
 )
 
 // RxMessageHandler 用来接收消息的接口。

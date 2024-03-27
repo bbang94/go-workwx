@@ -70,9 +70,18 @@ func (x *withHTTPClient) applyTo(y *options) {
 	y.HTTP = x.x
 }
 
-//
-//
-//
+type withDebugMode struct {
+	x bool
+}
+
+func (w withDebugMode) applyTo(y *options) {
+	y.DebugMode = w.x
+}
+
+// WithDebugMode 开启debug模式
+func WithDebugMode(x bool) CtorOption {
+	return &withDebugMode{x: x}
+}
 
 type withAccessTokenProvider struct {
 	x ITokenProvider

@@ -1,11 +1,8 @@
 package workwx_test
 
 import (
-	"net/http"
-	"strconv"
-	"time"
-
 	"github.com/bbang94/go-workwx"
+	"net/http"
 )
 
 const (
@@ -115,63 +112,6 @@ func ExampleWorkwxApp_ApplyOAEvent() {
 					},
 				},
 				{
-					Control: workwx.OAControlFormula,
-					ID:      "Formula-1608632498148",
-					Value: workwx.OAContentValue{
-						Formula: workwx.OAContentFormula{Value: "5.0"},
-					},
-				},
-				{
-					Control: workwx.OAControlDate,
-					ID:      "Date-1608632499227",
-					Value: workwx.OAContentValue{
-						Date: workwx.OAContentDate{Type: "day", Timestamp: strconv.FormatInt(time.Now().Unix(), 10)},
-					},
-				},
-				{
-					Control: workwx.OAControlDate,
-					ID:      "Date-1608632500394",
-					Value: workwx.OAContentValue{
-						Date: workwx.OAContentDate{Type: "hour", Timestamp: strconv.FormatInt(time.Now().Unix(), 10)},
-					},
-				},
-				{
-					Control: workwx.OAControlDateRange,
-					ID:      "DateRange-1608632502131",
-					Value: workwx.OAContentValue{
-						DateRange: workwx.OAContentDateRange{
-							NewBegin:    int(time.Now().Unix()),
-							NewEnd:      int(time.Now().Add(time.Hour * 24).Unix()),
-							NewDuration: 60 * 60 * 24,
-						},
-					},
-				},
-				{
-					Control: workwx.OAControlSelector,
-					ID:      "Selector-1608632503203",
-					Value: workwx.OAContentValue{
-						Selector: workwx.OAContentSelector{
-							Type: "single",
-							Options: []workwx.OAContentSelectorOption{
-								{Key: "option-1608632503204"},
-							},
-						},
-					},
-				},
-				{
-					Control: workwx.OAControlSelector,
-					ID:      "Selector-1608632504330",
-					Value: workwx.OAContentValue{
-						Selector: workwx.OAContentSelector{
-							Type: "multi",
-							Options: []workwx.OAContentSelectorOption{
-								{Key: "option-1608632504330"},
-								{Key: "option-1608632504331"},
-							},
-						},
-					},
-				},
-				{
 					Control: workwx.OAControlContact,
 					ID:      "Contact-1608632505579",
 					Value: workwx.OAContentValue{
@@ -194,19 +134,7 @@ func ExampleWorkwxApp_ApplyOAEvent() {
 						}},
 					},
 				},
-				{
-					Control: workwx.OAControlLocation,
-					ID:      "Location-1608632507748",
-					Value: workwx.OAContentValue{
-						Location: workwx.OAContentLocation{
-							Latitude:  "30.547239",
-							Longitude: "104.063291",
-							Title:     "腾讯科技(成都)有限公司(腾讯成都大厦)",
-							Address:   "四川省成都市武侯区天府三街198号腾讯成都大厦A座",
-							Time:      int(time.Now().Unix()),
-						},
-					},
-				},
+
 				{
 					Control: workwx.OAControlRelatedApproval,
 					ID:      "RelatedApproval-1608632509930",
@@ -254,33 +182,6 @@ func ExampleWorkwxApp_ApplyOAEvent() {
 										},
 									},
 								},
-							},
-						},
-					},
-				},
-				{
-					Control: workwx.OAControlVacation,
-					ID:      "Vacation-1608715577151",
-					Value: workwx.OAContentValue{
-						Vacation: workwx.OAContentVacation{
-							Selector: workwx.OAContentSelector{
-								Type: "single",
-								Options: []workwx.OAContentSelectorOption{
-									{
-										Key: "3",
-									},
-								},
-							},
-							Attendance: workwx.OAContentVacationAttendance{
-								DateRange: workwx.OAContentVacationAttendanceDateRange{
-									Type: "hour",
-									OAContentDateRange: workwx.OAContentDateRange{
-										NewBegin:    int(time.Now().Unix()),
-										NewEnd:      int(time.Now().Add(time.Hour * 72).Unix()),
-										NewDuration: 60 * 60 * 72,
-									},
-								},
-								Type: 1,
 							},
 						},
 					},

@@ -10,6 +10,7 @@ const DefaultQYAPIHost = "https://qyapi.weixin.qq.com"
 type options struct {
 	QYAPIHost                      string
 	HTTP                           *http.Client
+	DebugMode                      bool
 	AccessTokenProvider            ITokenProvider
 	JSAPITicketProvider            ITokenProvider
 	JSAPITicketAgentConfigProvider ITokenProvider

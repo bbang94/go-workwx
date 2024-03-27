@@ -97,6 +97,9 @@ func (c *WorkwxApp) composeQyapiURLWithToken(path string, req interface{}, withA
 	}
 
 	q := url.Query()
+	if c.opts.DebugMode {
+		q.Set("debug", "1")
+	}
 	q.Set("access_token", tok)
 	url.RawQuery = q.Encode()
 
